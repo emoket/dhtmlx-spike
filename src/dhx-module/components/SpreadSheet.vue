@@ -1,7 +1,4 @@
 <script>
-import { Spreadsheet } from '@dhx/trial-spreadsheet';
-import '@dhx/trial-spreadsheet/codebase/spreadsheet.min.css';
-// import data
 import { data } from './spreadsheet-data';
 
 export default {
@@ -12,12 +9,8 @@ export default {
   },
 
   mounted() {
-    this.spreadsheet = new Spreadsheet(this.$refs.cont, {});
+    this.spreadsheet = new dhx.Spreadsheet(this.$refs.cont, {});
     this.spreadsheet.parse(data);
-  },
-  unmounted() {
-    this.spreadsheet.destructor();
-    // this.$refs.cont.innerHTML = '';
   },
 };
 </script>

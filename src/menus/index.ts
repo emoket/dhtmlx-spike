@@ -46,12 +46,6 @@ const dhxMenus = [
     to: '/dhx/suite',
   },
   {
-    title: '@dhx/trial-spreadsheet',
-    icon: symRoundedTable,
-    to: '/dhx/spreadsheet',
-  },
-
-  {
     title: 'cdn-diagram',
     icon: symRoundedFamilyHistory,
     to: '/dhx/diagram',
@@ -65,6 +59,11 @@ const dhxMenus = [
     title: 'cdn-pivot',
     icon: symRoundedPivotTableChart,
     to: '/dhx/pivot',
+  },
+  {
+    title: 'public/spreadsheet',
+    icon: symRoundedTable,
+    to: '/dhx/spreadsheet',
   },
   {
     title: 'public/event-calendar',

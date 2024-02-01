@@ -33,36 +33,38 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="dhx-container_inner"> -->
-  <div style="width: 100%; height: calc(100vh - 50px)">
-    <section class="dhx_sample-controls">
-      <button
-        class="dhx_sample-btn dhx_sample-btn--flat"
-        @click="serialize('html')"
-      >
-        Serialize HTML
-      </button>
-      <button
-        class="dhx_sample-btn dhx_sample-btn--flat"
-        @click="serialize('markdown')"
-      >
-        Serialize Markdown
-      </button>
-      <button
-        class="dhx_sample-btn dhx_sample-btn--flat"
-        @click="serialize('text')"
-      >
-        Serialize Plain Text
-      </button>
-    </section>
-    <div class="dhx_container">
-      <div ref="richtext" class="dhx_sample-container__widget setting"></div>
-      <textarea
-        readonly
-        class="dhx_sample-container__textarea"
-        placeholder="The result will be here:"
-        v-model="content"
-      ></textarea>
+  <q-page>
+    <!-- <div class="dhx-container_inner"> -->
+    <div style="width: 100%; height: calc(100vh - 50px)">
+      <section class="dhx_sample-controls">
+        <button
+          class="dhx_sample-btn dhx_sample-btn--flat"
+          @click="serialize('html')"
+        >
+          Serialize HTML
+        </button>
+        <button
+          class="dhx_sample-btn dhx_sample-btn--flat"
+          @click="serialize('markdown')"
+        >
+          Serialize Markdown
+        </button>
+        <button
+          class="dhx_sample-btn dhx_sample-btn--flat"
+          @click="serialize('text')"
+        >
+          Serialize Plain Text
+        </button>
+      </section>
+      <div class="dhx_container">
+        <div ref="richtext" class="dhx_sample-container__widget setting"></div>
+        <textarea
+          readonly
+          class="dhx_sample-container__textarea"
+          placeholder="The result will be here:"
+          v-model="content"
+        ></textarea>
+      </div>
     </div>
-  </div>
+  </q-page>
 </template>
