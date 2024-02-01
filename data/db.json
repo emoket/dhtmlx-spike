@@ -1,0 +1,11 @@
+{
+  "employees": [
+    {
+      "id": 3413,
+      "empName": "박용진",
+      "empDeptName": "ICIS Tr 아키텍처팀",
+      "empTelNo": "01012341234",
+      "empMail": "emoket@kt.com"
+    }
+  ]
+}
