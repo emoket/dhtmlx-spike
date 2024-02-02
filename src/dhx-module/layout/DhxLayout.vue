@@ -13,7 +13,7 @@ const miniState = ref(true);
 
 <template>
   <q-layout view="hHh lpR fFf" reveal>
-    <q-header bordered :class="$q.dark.isActive ? 'bg-dark' : 'bg-secondary'">
+    <q-header bordered :class="$q.dark.isActive ? 'bg-dark' : 'bg-primary'">
       <q-toolbar class="q-px-none">
         <q-btn stretch flat :icon="roundMenu" @click="drawer = !drawer" />
 

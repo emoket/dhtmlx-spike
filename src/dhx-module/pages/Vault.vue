@@ -22,7 +22,7 @@ export default {
       toolbar: this.toolbar,
     });
   },
-  beforeDestroy: function () {
+  beforeUnmount: function () {
     this.vault.destructor();
   },
 };
