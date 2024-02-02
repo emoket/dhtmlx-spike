@@ -1,27 +1,18 @@
 <script>
-import fromCDN from 'from-cdn';
-// import data
 import { autoPlaceData } from './diagram-data';
 
 export default {
-  name: 'DefaultEditorAutoplacement',
   data: () => ({
     editor: null,
   }),
   mounted() {
-    fromCDN([
-      'https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.js',
-      'https://cdn.dhtmlx.com/diagram/pro/edge/diagramWithEditor.css',
-    ]).then(() => {
-      // eslint-disable-next-line no-undef
-      this.editor = new dhx.DiagramEditor(this.$refs.editor, {
-        type: 'default', // ['org', 'minimap']
-        autoplacement: {
-          mode: 'direct',
-        },
-      });
-      this.editor.parse(autoPlaceData);
+    this.editor = new dhx.DiagramEditor(this.$refs.editor, {
+      type: 'default', // ['org', 'minimap']
+      autoplacement: {
+        mode: 'direct',
+      },
     });
+    this.editor.parse(autoPlaceData);
   },
 };
 </script>

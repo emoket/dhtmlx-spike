@@ -1,5 +1,4 @@
 <script>
-import fromCDN from 'from-cdn';
 export default {
   name: 'RichTextGettingContentCdn',
   data: () => ({
@@ -10,13 +9,8 @@ export default {
     content: '',
   }),
   mounted() {
-    fromCDN([
-      'https://cdn.dhtmlx.com/richtext/pro/edge/richtext.js',
-      'https://cdn.dhtmlx.com/richtext/pro/edge/richtext.css',
-    ]).then(() => {
-      this.richtext = new dhx.Richtext(this.$refs.richtext);
-      this.richtext.setValue(this.initialContent, 'markdown');
-    });
+    this.richtext = new dhx.Richtext(this.$refs.richtext);
+    this.richtext.setValue(this.initialContent, 'markdown');
   },
   methods: {
     serialize(value) {

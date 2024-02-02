@@ -12,6 +12,7 @@
 
 <script>
 import { Grid as GridDHX, DataCollection } from 'dhx-suite';
+import { suiteData } from './suite-grid';
 export default {
   name: 'ChartData',
   data: () => ({
@@ -22,9 +23,7 @@ export default {
     handleClick(action) {
       if (action === 'reset') {
         this.data.removeAll();
-        this.data.load(
-          'https://dhtmlx.github.io/react-widgets/static/grid.json',
-        );
+        this.data.parse(suiteData);
       } else if (action === 'remove') {
         this.data.remove(this.data.getId(0));
       }
@@ -53,7 +52,7 @@ export default {
       data: this.data,
     });
 
-    this.data.load('https://dhtmlx.github.io/react-widgets/static/grid.json');
+    this.data.parse(suiteData);
   },
   beforeUnmount() {
     if (this.grid) {
@@ -64,3 +63,4 @@ export default {
 </script>
 
 <style></style>
+./suite-grid.js

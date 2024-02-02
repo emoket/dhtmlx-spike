@@ -56,7 +56,7 @@ export default {
       path: '/dhx/vault',
       name: 'dhx-vault',
       meta: { requiresAuth: true },
-      component: () => import('@/dhx-module/components/VaultCdnParent.vue'),
+      component: () => import('@/dhx-module/components/VaultParent.vue'),
     },
     {
       path: '/dhx/pivot',

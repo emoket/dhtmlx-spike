@@ -1,5 +1,4 @@
 <script>
-import fromCDN from 'from-cdn';
 import { dataset } from './pivot-data';
 
 export default {
@@ -31,54 +30,46 @@ export default {
     events: [],
   }),
   mounted() {
-    fromCDN([
-      'https://cdn.dhtmlx.com/pivot/pro/edge/pivot.js',
-      'https://cdn.dhtmlx.com/pivot/pro/edge/pivot.css',
-    ]).then(() => {
-      // eslint-disable-next-line no-undef
-      this.pivot = new dhx.Pivot(this.$refs.pivot, {
-        data: dataset,
-        fields: this.fields,
-        fieldList: this.fieldList,
-        layout: this.layout,
-      });
+    this.pivot = new dhx.Pivot(this.$refs.pivot, {
+      data: dataset,
+      fields: this.fields,
+      fieldList: this.fieldList,
+      layout: this.layout,
+    });
 
-      this.pivot.events.on('fieldClick', (e, id, type) => {
-        this.isEmpty = false;
-        const keyId = Math.random();
-        this.events = [
-          {
-            keyId,
-            name: 'fieldClick',
-            value: `${JSON.stringify(e)}, ${id}, ${type}`,
-          },
-        ].concat(this.events);
-      });
-      this.pivot.events.on('applyButtonClick', () => {
-        this.isEmpty = false;
-        const keyId = Math.random();
-        this.events = [{ keyId, name: 'applyButtonClick', value: '' }].concat(
-          this.events,
-        );
-      });
-      this.pivot.events.on('change', () => {
-        this.isEmpty = false;
-        const keyId = Math.random();
-        this.events = [{ keyId, name: 'change', value: '' }].concat(
-          this.events,
-        );
-      });
-      this.pivot.events.on('filterApply', (field, settings) => {
-        this.isEmpty = false;
-        const keyId = Math.random();
-        this.events = [
-          {
-            keyId,
-            name: 'filterApply',
-            value: `${field}, ${JSON.stringify(settings)}`,
-          },
-        ].concat(this.events);
-      });
+    this.pivot.events.on('fieldClick', (e, id, type) => {
+      this.isEmpty = false;
+      const keyId = Math.random();
+      this.events = [
+        {
+          keyId,
+          name: 'fieldClick',
+          value: `${JSON.stringify(e)}, ${id}, ${type}`,
+        },
+      ].concat(this.events);
+    });
+    this.pivot.events.on('applyButtonClick', () => {
+      this.isEmpty = false;
+      const keyId = Math.random();
+      this.events = [{ keyId, name: 'applyButtonClick', value: '' }].concat(
+        this.events,
+      );
+    });
+    this.pivot.events.on('change', () => {
+      this.isEmpty = false;
+      const keyId = Math.random();
+      this.events = [{ keyId, name: 'change', value: '' }].concat(this.events);
+    });
+    this.pivot.events.on('filterApply', (field, settings) => {
+      this.isEmpty = false;
+      const keyId = Math.random();
+      this.events = [
+        {
+          keyId,
+          name: 'filterApply',
+          value: `${field}, ${JSON.stringify(settings)}`,
+        },
+      ].concat(this.events);
     });
   },
   methods: {

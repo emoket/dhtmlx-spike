@@ -2,6 +2,7 @@
   "name": "dhtmlx-spike",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "serve": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -12,13 +13,11 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@dhx/trial-spreadsheet": "^5.1.1",
     "@quasar/extras": "^1.15.10",
     "@vueuse/core": "^9.13.0",
     "dhtmlx-gantt": "^8.0.6",
     "dhtmlx-scheduler": "^6.0.5",
     "dhx-suite": "^8.3.3",
-    "from-cdn": "^1.0.1",
     "pinia": "^2.0.30",
     "quasar": "^2.11.5",
     "vue": "^3.2.45",
